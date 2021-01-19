@@ -24,3 +24,8 @@ void function bubbleSort(sortableList) {
 
 ## Notes:
 Stops when no swaps are conducted.
+
+Really only decent complexity in the best case -- anything worse than that gets pretty ugly pretty quickly.  
+
+Because of bubble sort's complexity, a lot of people consider it to be an algorithm just to be used for the sake of teaching algorithms. It's
+probably not best to actually use it in any application.
