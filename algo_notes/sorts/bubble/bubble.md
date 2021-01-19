@@ -9,7 +9,7 @@ Worst: O(n^2)
 Worst: O(1)
 
 ## Pseudocode:
-'''
+```
 void function bubbleSort(sortableList) {  
     swapped = false;  
     do {  
@@ -20,7 +20,7 @@ void function bubbleSort(sortableList) {
             }  
     } while (swapped isn't false);  
 }  
-''' 
+``` 
 
 ## Notes:
 Stops when no swaps are conducted.
