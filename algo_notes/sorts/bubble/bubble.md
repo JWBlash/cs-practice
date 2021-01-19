@@ -1,14 +1,14 @@
-#Bubble Sort
+# Bubble Sort
 
-##Time Complexities:
+## Time Complexities:
 Best: Ω(n)
 Avg: Θ(n^2)
 Worst: O(n^2)
 
-##Space Complexity:
+## Space Complexity:
 Worst: O(1)
 
-##Pseudocode:
+## Pseudocode:
 '''
 void function bubbleSort(sortableList) {
     swapped = false;
@@ -22,5 +22,5 @@ void function bubbleSort(sortableList) {
 }
 ''' 
 
-##Notes:
+## Notes:
 Stops when no swaps are conducted.
