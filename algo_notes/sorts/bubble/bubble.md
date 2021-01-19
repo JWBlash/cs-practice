@@ -10,16 +10,16 @@ Worst: O(1)
 
 ## Pseudocode:
 '''
-void function bubbleSort(sortableList) {
-    swapped = false;
-    do {
-        for (int i = 0; i < sortableList.len - 1; i++) {
-            if (sortableList[i] < sortableList[i+1]) {
-                swap(sortableList[i], sortableList[i+1])
-                swapped = true;
-            }
-    } while (swapped isn't false);
-}
+void function bubbleSort(sortableList) {  
+    swapped = false;  
+    do {  
+        for (int i = 0; i < sortableList.len - 1; i++) {  
+            if (sortableList[i] < sortableList[i+1]) {  
+                swap(sortableList[i], sortableList[i+1]);  
+                swapped = true;  
+            }  
+    } while (swapped isn't false);  
+}  
 ''' 
 
 ## Notes:
