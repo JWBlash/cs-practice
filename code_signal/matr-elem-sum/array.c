@@ -19,9 +19,12 @@ typedef struct matr_integer {
 } matr_integer;
 
 matr_integer alloc_matr_integer(int depth, int length) {
-    arr_integer a = alloc_arr_integer(length);
-    matr_integer m = {depth, &a};
+    matr_integer m = {depth, depth > 0 ? malloc(sizeof(alloc_arr_integer(length)) * depth) : NULL};
     return m;
+}
+
+matr_integer assign_matr_values(int matr_size, int depth, int length) {
+    //for (int i = 0; i < 
 }
 
 // prints
@@ -49,11 +52,14 @@ int main(void) {
     arr_integer arrs = alloc_arr_integer(6);
     arrs.arr = ints;
 
-    arr_integer mar[3][4] = {{0, 1, 1, 2}, 
-                	    {0, 5, 0, 0}, 
-          	            {2, 0, 3, 3}};
+    int mar[3][4] = {
+        {0, 1, 1, 2}, 
+        {0, 5, 0, 0}, 
+        {2, 0, 3, 3}
+    };
+
     matr_integer mars = alloc_matr_integer(3, 4);
-    mars.arrint = mar;
+    mars = assign_matr_values(mars.size, &mar);
 
     printArrElements(arrs);
     printMatElements(mars);
