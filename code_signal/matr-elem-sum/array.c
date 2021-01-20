@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// arrays
 typedef struct arr_integer {
     int size;
     int *arr;
@@ -11,33 +12,51 @@ arr_integer alloc_arr_integer(int len) {
    return a;
 }
 
-void printAllElements(arr_integer inputArray) {
+// matrices
+typedef struct matr_integer {
+    int size;
+    arr_integer *arrint;
+} matr_integer;
+
+matr_integer alloc_matr_integer(int depth, int length) {
+    arr_integer a = alloc_arr_integer(length);
+    matr_integer m = {depth, &a};
+    return m;
+}
+
+// prints
+void printArrElements(arr_integer inputArray) {
     for (int i = 0; i < inputArray.size; i++) {
         printf("Element %d, %d\n", i, inputArray.arr[i]);
     }
 }
 
-//codesignal guy
-int adj(arr_integer inputArray) {
-    int max = 0;
-    for (int i = 0; i < (inputArray.size - 1); i++) {
-        int temp = inputArray.arr[i] * inputArray.arr[i+1];
-        if (temp >= max) {
-            max = temp;
+void printMatElements(matr_integer inputMatrix) {
+    for (int i = 0; i < inputMatrix.size; i++) {
+        for (int j = 0; j < inputMatrix.arrint->size; j++) {
+            printf("Array %d, Element %d, Value %d\n", i, j, inputMatrix.arrint->arr[j]);
         }
-        printf("temp %d, max = %d\n", temp, max);
     }
-    return max;
 }
 
+//codesignal guy
+int matrSum(matr_integer matrix) {
+}
+
+// main
 int main(void) {
     int ints[6] = {3, 6, -2, -5, 7, 3};
     arr_integer arrs = alloc_arr_integer(6);
     arrs.arr = ints;
-    printAllElements(arrs);
 
-    int max = adj(arrs);
-    printf("MAX: %d\n", max);
+    arr_integer mar[3][4] = {{0, 1, 1, 2}, 
+                	    {0, 5, 0, 0}, 
+          	            {2, 0, 3, 3}};
+    matr_integer mars = alloc_matr_integer(3, 4);
+    mars.arrint = mar;
+
+    printArrElements(arrs);
+    printMatElements(mars);
 
     return 0;
 }
