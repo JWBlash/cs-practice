@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 // arrays
 typedef struct arr_integer {
@@ -23,8 +24,13 @@ matr_integer alloc_matr_integer(int depth, int length) {
     return m;
 }
 
-matr_integer assign_matr_values(int matr_size, int depth, int length) {
-    //for (int i = 0; i < 
+void assign_matr_values(matr_integer *pmat) {
+    //loop through pmat and initialize its values 
+    for (int i = 0; i < pmat->size; i++) {
+        for (int j = 0; j < pmat->arrint->size; j++) {
+            pmat->arrint->arr[j] = 1;
+        }
+    }
 }
 
 // prints
@@ -59,10 +65,12 @@ int main(void) {
     };
 
     matr_integer mars = alloc_matr_integer(3, 4);
-    mars = assign_matr_values(mars.size, &mar);
+    assign_matr_values(&mars);
 
     printArrElements(arrs);
+    printf("Done with arrays!\n");
     printMatElements(mars);
+    printf("Done with matrix!\n");
 
     return 0;
 }
