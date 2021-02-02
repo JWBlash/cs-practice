@@ -20,15 +20,19 @@ typedef struct matr_integer {
 } matr_integer;
 
 matr_integer alloc_matr_integer(int depth, int length) {
+    printf("Allocating...\n");
     matr_integer m = {depth, depth > 0 ? malloc(depth * sizeof(alloc_arr_integer(length))) : NULL};
+    printf("depth: %d, length: %d\n", depth, length);
 
     if (depth > 0) {
         for (int i = 0; i < depth; i++) {
             m.arrint[i] = alloc_arr_integer(length);
+            printf("sizeof m.arrint[%d]: %lu\n", i, sizeof(m.arrint[i]));
         }
     } else {
         m.arrint = NULL;
     }
+    printf("sizeof m: %lu\n", sizeof(m));
     return m;
 }
 
