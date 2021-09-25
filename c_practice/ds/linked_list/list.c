@@ -2,8 +2,8 @@
 
 
 typedef struct node {
-    int *next;
-    int data;
+    char *next;
+    char data;
 } node;
 
 typedef struct linked_list {
@@ -14,7 +14,13 @@ typedef struct linked_list {
 
 int main(void)
 {
-    printf("Lists!\n");
+    char *text = "Lists!\n";
+
+    printf("%c", *text);
+    printf("%s", text);
+
+    linked_list list;
+    
 
     return 0;
 }
