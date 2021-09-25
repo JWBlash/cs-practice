@@ -1,5 +1,7 @@
-pipe/*.o
-pipe/pipes
-client_server/*.o
-client_server/client
-client_server/server
+ipc-practice/pipe/*.o
+ipc-practice/pipe/pipes
+ipc-practice/client_server/*.o
+ipc-practice/client_server/client
+ipc-practice/client_server/server
+ds/linked_list/*.o
+ds/linked_list/list
